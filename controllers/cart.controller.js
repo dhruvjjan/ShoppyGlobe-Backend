@@ -72,6 +72,7 @@ export async function removeCartItem(req, res) {
   }
 }
 
+// DELETE /api/cart/clear
 export async function clearCart(req, res) {
   try {
     const userId = req.user.id; // Get userId from token

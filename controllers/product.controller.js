@@ -1,7 +1,7 @@
 import ProductModel from "../models/Product.model.js";
 
 
-
+// GET /api/products
 export async function getAllProducts(req, res) {
     try{
         const products = await ProductModel.find();
@@ -12,6 +12,7 @@ export async function getAllProducts(req, res) {
     }
 }
 
+// GET /api/products/:id
 export async function getProductById(req, res) {
     try{
         const productId = req.params.id;
@@ -26,6 +27,7 @@ export async function getProductById(req, res) {
     }
 }
 
+// POST /api/products
 export async function postProduct(req, res){
     try{
         let {image,title,description,price,brand,rating,stock} = req.body;

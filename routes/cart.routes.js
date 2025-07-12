@@ -7,11 +7,11 @@ import { verifyToken } from "../middleware/verifyToken.js";
 export function cartRoutes(app) {
     const router = express.Router();
 
-    router.post('/', verifyToken, addToCart);
-    router.get('/', verifyToken, getCartItems);
-    router.put('/:productId', verifyToken, updateCartItem);
-    router.delete('/:productId', verifyToken, removeCartItem);
-    router.delete('/clear', verifyToken, clearCart);
+    router.post('/', verifyToken, addToCart); // Add item to cart
+    router.get('/', verifyToken, getCartItems); // Get all items in the cart
+    router.put('/:productId', verifyToken, updateCartItem); // Update item in the cart
+    router.delete('/:productId', verifyToken, removeCartItem); // Remove item from the cart
+    router.delete('/clear', verifyToken, clearCart); // Clear the cart
 
     app.use('/api/cart', router);
 }

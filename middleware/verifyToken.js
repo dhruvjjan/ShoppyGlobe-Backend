@@ -1,5 +1,7 @@
 import jwt from 'jsonwebtoken';
 
+// Middleware to verify JWT token
+// This middleware checks if the request has a valid JWT token in the Authorization header.
 export function verifyToken(req, res, next) {
 
     const token = req.headers.authorization?.split(' ')[1];
